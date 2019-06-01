@@ -1,0 +1,12 @@
+---
+layout: default
+title: "Sheldon Fries -- Blog"
+redirect_from: "/blog"
+nav_item: blog
+header_title: Blog
+---
+
+{% for post in paginator.posts %}
+  {% include post-outline.html post=post %}
+{% endfor %}
+{% include pagination.html %}
