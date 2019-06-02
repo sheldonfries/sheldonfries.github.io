@@ -18,6 +18,7 @@ description: Blogging about random interests
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
+  android: Sheldon+Fries
   email: sheldonfries@gmail.com
   facebook:
   flickr:
@@ -47,7 +48,7 @@ url: http://sheldonfries.com/blog
 # (http://yourusername.github.io/repository-name)
 # and NOT your User repository (http://yourusername.github.io)
 # then add in the baseurl here, like this: "/repository-name"
-baseurl: "http://sheldonfries.com"
+baseurl: ""
 
 #
 # !! You don't need to change any of the configuration flags below !!
