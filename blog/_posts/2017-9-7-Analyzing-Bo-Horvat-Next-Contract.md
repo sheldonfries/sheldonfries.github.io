@@ -9,7 +9,7 @@ In addition to the speculated long-term deal, Friedman mentioned a couple of com
 
 If Friedman is correct here (and he usually is), it seems like both sides are getting very close to signing a long-term deal at somewhere in the upper $5 million range. Is this a good deal for the Canucks? Let’s take a look at some of the recent restricted free agent deals around this price range, and see how they compare to what both Bo Horvat and the Canucks have asked for.
 
-![Bo Horvat vs. comparables](/images/horvat/horvat-vs-comparables.png)
+![Bo Horvat vs. comparables](/blog/images/horvat/horvat-vs-comparables.png)
 <p style="text-align: center; font-size: 14px;">Source: CapFriendly.com</p>
 
 Horvat clearly belongs in this echelon of players (perhaps with the exception of Barkov, coincidentally enough), although his scoring numbers are lagging behind the rest of the group. The Barkov ask from the Horvat camp seems like an anchor used to try and steer the negotiations towards this higher price range, and if Elliotte Friedman is to be believed, it seems to be working. Even the team’s reported ask seems higher than it should be, at least when compared to players like **Alexander Wennberg** and **Vincent Trocheck** who have produced more in similar situations. If we’re going off of what the market has dictated for players with Horvat’s production, even a cap hit around $5 million on a 6 year term seems a little pricey.

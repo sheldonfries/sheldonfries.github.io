@@ -7,19 +7,19 @@ Of all the players acquired during Jim Benning’s tenure as General Manager, it
 
 When a player sets a career high in goals, it’s never a bad idea to take a look at their shooting percentage and on-ice shooting percentage. This can provide some information on how much of the player’s scoring success over the season was due to luck.
 
-![Granlund shooting percentage](/images/granlund/granlund-shooting.png)
+![Granlund shooting percentage](/blog/images/granlund/granlund-shooting.png)
 <p style="text-align: center; font-size: 14px;">Source: NHL.com</p>
 
 As we see here, Granlund’s shooting percentage last season was rather high at 15.6%. According to [QuantHockey](https://www.quanthockey.com/TS/TS_ShotPercentage.php), the average shooting percentage over the entire league last season was roughly 9%. This tells us that Granlund saw a considerably higher number of his shots find the back of the net than the average player. Does this mean Granlund is high-end sniper in the mould of a Steven Stamkos (whose shooting percentage has hovered around the 16% mark over the last 3 seasons), or was this a case of a player who benefited from a few more lucky bounces than usual over the course of the year? Let’s take a look at his shooting percentages in previous years.
 
-![Granlund shooting percentage](/images/granlund/granlund-shooting2.png)
+![Granlund shooting percentage](/blog/images/granlund/granlund-shooting2.png)
 <p style="text-align: center; font-size: 14px;">Source: NHL.com</p>
 
 Two seasons totalling just under 100 games isn’t a great sample size to work with, but based on what we have, it seems Granlund has been somewhere between an average to a slightly above-average shooter to date. There’s no guarantee that Markus Granlund’s shooting percentage will fall back in line with the league average next year, but this tells us to be skeptical that he’ll continue scoring at this rate in the future.
 
 The other shooting-related statistic worth looking into is on-ice shooting percentage. For anyone unfamiliar with on-ice shooting percentage, it’s very similar to plain shooting percentage with one caveat: rather than focusing on the player-in-question’s shooting percentage alone, it takes the player’s linemates into consideration as well. In other words, looking at Granlund’s on-ice shooting percentage will tell us how often both him and his linemates converted on their shots. Not only does this provide us with a larger sample of shots to work with, but it also offers us a better look into whether Granlund’s linemates were scoring at a higher rate than expected.
 
-![Granlund shooting percentage 5-on-5](/images/granlund/granlund-shooting3.png)
+![Granlund shooting percentage 5-on-5](/blog/images/granlund/granlund-shooting3.png)
 <p style="text-align: center; font-size: 14px;">Source: NHL.com</p>
 
 Fortunately for Granlund, this is very close to the league average (generally around 7.5%). There’s really no reason to believe that his point totals are unsustainable as long as he continues to get the same amount of ice-time as he did this past season. That’s not to say that he’s guaranteed to be on pace for around 40 points again next season — he could just as easily run into good or bad luck over the course of the year and have his production skew either way — but it does seem fair to say that this production level is close to his true talent.
@@ -29,13 +29,13 @@ Granlund was one of the forwards coach Willie Desjardins relied on heavily last 
 I decided to take the even strength TOI and points of the players closest to Granlund in terms of ice-time, and compare how much ice-time each player needed per point. The idea here is to see whether Granlund was producing at the same level as some of the other players around the league getting similar ice-time.
 
 <div style="text-align: center;">
-	<img src="/images/granlund/granlund-toi.png" alt="Granlund even strength ice time">
+	<img src="/blog/images/granlund/granlund-toi.png" alt="Granlund even strength ice time">
 </div>
 
 Unsurprisingly, Granlund shows very poorly here. He needs roughly twice as much ice-time to score the same amount as some of the higher end players in this bucket, and still considerably longer than the lower end players. However, even some of Granlund’s strongest supporters wouldn’t dare compare him to the players on this list. Let’s try moving away from ice-time comparables and start looking at some bottom-six forwards to see if Granlund fares any better.
 
 <div style="text-align: center;">
-	<img src="/images/granlund/granlund-toi3.png" alt="Granlund even strength ice time">
+	<img src="/blog/images/granlund/granlund-toi3.png" alt="Granlund even strength ice time">
 </div>
 
 This is starting to look better. Unfortunately for Granlund, being compared to a group of third liners isn’t a compliment when you’re getting second line ice-time — and first line ice-time at even strength! It should be pretty clear here that Granlund has been getting far more ice-time than he deserves, and based on some of his comparables, he should be somewhere around 12 even strength minutes per game. Naturally, this would hurt his production a fair bit. If it takes Granlund over 17 minutes per game to produce like a low-end second liner, what sort of production would you get out of him at 12 to 14 minutes per game? Unfortunately, it’s hard to know for sure until we actually see him playing those minutes. All we can say for certain is that he’s in over his head in his current role, and calling him a top-6 forward seems premature until he can actually score at that level with reasonable playing time.
