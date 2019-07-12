@@ -1,3 +1,0 @@
-<img style="margin-bottom: 5px; margin-right: 12px" src="http://oilfans.com/images/logos/wsh_comp.gif" alt="Washington Capitals" width="50%">
-<h2>Cap Sheet</h2>
-<iframe width="85%" height="750" frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/1iMqBKxJy7rhqj5S0bVMYwrN8AUEG8u25UVK4Qy249Us/pubhtml?gid=0&amp;single=true&amp;widget=false&chrome=false&amp;headers=false"></iframe>
