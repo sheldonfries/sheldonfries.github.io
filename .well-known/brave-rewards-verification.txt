@@ -1,4 +1,4 @@
 This is a Brave Rewards publisher verification file.
 
-Domain: sheldonfries.github.io
-Token: c5ddacca5c787117ea71b0647116ab4bade09140f62a9995384e776990b012cb
+Domain: sheldonfries.com
+Token: cd324520621ae599681b98a42986132b9592c352ffc3ae35a9e263859a894d3d
