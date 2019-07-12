@@ -1,0 +1,75 @@
+<script type="text/javascript">
+	$(document).ready(function() {
+		function fetch_data()
+		{
+			$.ajax({
+				url:"includes/skatersold.php",
+				method:"POST",
+				success:function(output){
+					$('#live_data').html(output);
+				}
+			});
+		}
+		fetch_data();
+		$(document).on('click', 'submit', function(){
+			var points = $('#valueOfPoints').text();
+			var assists = $('#valueOfAssists').text();
+			var pims = $('#valueOfPIMs').text();
+			if(points == '')
+			{
+				alert("Enter a valid points value.");
+				return false;
+			}
+			if(assists == '')
+			{
+				alert("Enter a valid assists value. (If your pool counts points rather than goals and assists individually, set this value to '1'.");
+				return false;
+			}
+			if(pims == '')
+			{
+				alert("Enter a valid penalty minutes value. (If your pool does not count penalty minutes, set this value to '0'.");
+				return false;
+			}
+			$.ajax({
+				url:"includes/insert.php",
+				method:"POST",
+				data: {pointsval:points, assistsval:assists, pimsval:pims},
+				dataType:"text",
+				success:function(){
+					alert(data);
+					fetch_data();
+				}
+			});
+		});
+		
+		$('#skaterTable').dataTable( {
+			"processing": true,
+			"serverSide": true,
+		}
+	});
+</script>
+
+$(document).ready(function() {
+    $('#skaterTable').DataTable({
+    		"columns": [
+    		{"data": "counter"},
+    		{"data": "name"},
+    		{"data": "age"},
+    		{"data": "team"},
+    		{"data": "position"},
+    		{"data": "gp"},
+    		{"data": "goals"},
+    		{"data": "assists"},
+    		{"data": "points"},
+    		{"data": "pims"},
+    		{"data": "poolpoints"},
+    		{"data": "pp82"}
+    		],
+    	"processing": true,
+    	"serverSide": true,
+    	"ajax": {
+    		url: 'skaters.php',
+    		type: 'POST'
+    	}
+    });
+} );
