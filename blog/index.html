@@ -6,10 +6,7 @@ layout: blog
   {% for post in site.posts %}
     <article class="post">
       <h1 class="post-header"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-      <span class="mr1 nowrap">
-        <i class="fa fa-calendar"></i>
-        <time datetime="{{ include.post.date | date:"%Y-%m-%d" }}">{{ include.post.date | date:"%b %d, %Y" }}</time>
-      </span>
+
       <div class="entry">
         <p>
           {{ post.excerpt | strip_html | truncate: 500, '...' }}
@@ -19,6 +16,10 @@ layout: blog
       <div style="margin-top:10px">
         <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
       </div>
+      <span class="mr1 nowrap date-header">
+        <i class="far fa-calendar"></i>
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%b %d, %Y" }}</time>
+      </span>
     </article>
   {% endfor %}
 </div>
