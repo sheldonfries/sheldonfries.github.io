@@ -20,6 +20,15 @@ body {
   width: 100%;
 }
 
+.row {
+  height: initial !important;
+}
+
+.col-md-4, .col-md-8 {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Atiza" !important;
   color: darkgray;
@@ -193,4 +202,24 @@ footer {
 .date-header {
   color: gray;
   float: right;
+}
+
+.breadcrumb {
+  font-family: "Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
+.breadcrumb-container {
+  padding-top: 20px;
+  margin-bottom: -20px;
+}
+
+.img-container {
+  margin-top: 40px;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .img-container {
+    margin-top: 0;
+  }
 }

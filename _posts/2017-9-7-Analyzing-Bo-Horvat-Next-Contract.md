@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Analyzing Bo Horvat’s Next Contract
+thumbnail: /images/horvat/thumbnail.jpg
 ---
 
 With the start of the preseason looming, the Vancouver Canucks have just one restricted free agent left to sign. Unfortunately for them, this free agent happens to be one of their most important players going forward. In his three seasons as a Canuck, **Bo Horvat** has emerged as one of the team’s brightest stars, making this an important deal for General Manager Jim Benning to get right. Over the past few weeks, a couple of different scenarios have been thrown out by journalists connected to the situation. Jason Botchford has said that the Canucks [are close to signing Horvat to a bridge deal](https://twitter.com/TSN1040/status/903659920268169216), while both [Rick Dhaliwal](https://twitter.com/DhaliwalSports/status/905566523816763392) and [Elliotte Friedman](https://twitter.com/DhaliwalSports/status/905807904837472256) have suggested the possibility of a longer term contract.

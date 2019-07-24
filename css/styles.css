@@ -38,9 +38,20 @@ h1, p {
     padding-top: 0;
 }
 
-.navbar-nav {
-    padding-left: 20px;
-    padding-right: 30px;
+@media (max-width: 991px) {
+    .navbar-nav {
+        flex-direction: row !important;
+    }
+    .navbar-nav .dropdown-menu {
+        position: absolute !important;
+    }
+}
+
+@media (max-width: 424px) {
+    .ml-auto {
+        display: initial !important;
+        flex-direction: column !important;
+    }
 }
 
 #bottomNav > ul {

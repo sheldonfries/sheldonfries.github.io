@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Analyzing Bo Horvat’s New Contract
+thumbnail: /images/horvat/thumbnail-1.jpg
 ---
 
 Just prior to the start of training camp, the Vancouver Canucks announced the extension of one of their most valuable young pieces going forward. In his three seasons as a Canuck, **Bo Horvat** has emerged as one of the team’s brightest stars, making this an important deal for general manager Jim Benning to get right. The two sides ultimately settled on a long-term deal spanning six years, for a total of $33 million.

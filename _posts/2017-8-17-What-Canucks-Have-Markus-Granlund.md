@@ -1,6 +1,7 @@
 ---
 layout: post
 title: What do the Canucks have in Markus Granlund?
+thumbnail: /images/granlund/thumbnail.jpg
 ---
 
 Of all the players acquired during Jim Benning’s tenure as General Manager, it’s hard to think of a player more polarizing than **Markus Granlund**. The trade that brought him to Vancouver saw former first-round pick and top prospect **Hunter Shinkaruk** headed to one of the team’s top rivals in Calgary, and Canucks fans have been divided on his value ever since. Supporters of Granlund will point to his latest season as evidence that the young forward is a bonafide NHL regular. After all, he was trusted by former Head Coach Willie Desjardins in a top-6 role for most of the season, and finished just one goal shy of 20 in 69 games. Granlund’s detractors, on the other hand, see his spike in production as a mirage due to his playing time. We’ll take a look at a couple of these points and try to determine how much of Granlund’s success was because of factors outside of his control, and what could translate into more production in the coming years. With his contract expiring next offseason — at which point he’ll surely be looking for a sizeable raise — should the Canucks tread carefully, or look to lock him up long-term?
