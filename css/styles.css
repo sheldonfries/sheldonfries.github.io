@@ -54,6 +54,13 @@ h1, p {
     }
 }
 
+@media (max-width: 767px) {
+    .col-md-4, .col-md-8 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
 #bottomNav > ul {
     padding-right: 0px !important;
 }
