@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Social Media and its Effects on Political Discourse in the United States
+title: Social Media and Political Discourse in the United States
 thumbnail: /images/politics/social-media-header.png
 ---
 
