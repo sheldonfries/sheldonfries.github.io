@@ -114,8 +114,13 @@ img {
 }
 
 .date {
-  font-style: italic;
   color: gray;
+  margin: -20px auto 20px auto;
+}
+
+.blog-image {
+  margin-bottom: 40px;
+  text-align: center;
 }
 
 .clearfix:before,
