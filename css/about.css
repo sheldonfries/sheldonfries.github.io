@@ -1,3 +1,11 @@
+body {
+    background: white !important;
+}
+
+p {
+    font-size: 14px;
+}
+
 #aboutme {
     padding-top: 80px;
 }
@@ -29,6 +37,7 @@
 
 #content {
     padding-bottom: 40px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .img-holder {
@@ -49,7 +58,7 @@
 }
 
 .technologies {
-    padding: 0 20% 0 30%;
+    padding: 0 25%;
 }
 
 .divider {
@@ -73,10 +82,41 @@ h6 {
     font-weight: bold;
 }
 
-.sheldon-holder {
-    padding-left: 50px;
+.about-holder {
+    text-align: center;
 }
 
-.badge {
-    padding: 10px;
+.about-pic {
+    border-radius: 100px;
+    margin-bottom: 25px;
 }
+
+.about-text {
+    padding: 0 25%;
+}
+
+@media (max-width: 767px) {
+    .about-text {
+        padding: 0;
+    }
+
+    .about-header {
+        margin-bottom: 20px;
+    }
+
+    .about-header::before, .about-header::after {
+        display: none;
+    }
+
+    .img-holder, .highlights > div > h4, .highlights > div > h6 {
+        text-align: center;
+    }
+
+    .highlights > div > h6 { 
+        margin-bottom: 10px;
+    }
+
+    .img-holder > img {
+        max-width: 150px;
+    }
+  }

@@ -1,43 +1,51 @@
 <div id="middle">
     <div id="content">
         <div id="aboutme">
-            <h1 class="about-header">About Me</h1>
-            <div class="row">
-                <div class="col" style="text-align: right; padding-left: 20%">
-                    <p>Sheldon Fries is a fourth year Computing Science student at Simon Fraser University and GIS Analyst at Esri Canada.
-                        In his free time, he enjoys coding side projects, watching and writing about hockey, and lifting.
-                        Previously, he studied at Langara College and worked at Canadian Web Hosting as a Junior Programmer.
-                    </p>
-                    <a href="/assets/Resume.pdf" target="_blank">
-                        <span class="badge badge-primary">View Resume</span>
-                    </a>
-                </div>
-                <div class="col sheldon-holder">
-                    <img src="/images/sheldon.jpg" alt="Sheldon Fries">
-                </div>
+            <div class="col about-holder">
+                <img class="about-pic" src="/images/sheldon.jpg" alt="Sheldon Fries">
+                <h1>Sheldon Fries</h1>
+                <p class="about-text">I'm a fourth year Computing Science student at Simon Fraser University and GIS Analyst at Esri Canada.
+                    In my free time, I enjoy coding side projects, watching and writing about hockey, and lifting.
+                    Previously, I've studied at Langara College and worked at Canadian Web Hosting as a Junior Programmer.
+                </p>
+                <a class="btn btn-outline-primary" href="/assets/Resume.pdf" target="_blank" role="button">View Resume</a>
             </div>
         </div>
         <div class="margin-top-large"></div>
         <div id="technologies">
             <h1 class="about-header">Technologies</h1>
             <div class="row technologies">
-                <div class="col-sm-6">
-                    <ul>
-                        <li>JavaScript & jQuery</li>
-                        <li>Java</li>
-                        <li>C</li>
-                        <li>Python</li>
-                        <li>CSS/Sass/Less</li>
-                    </ul>
-                </div>
-                <div class="col-sm-6">
-                    <ul>
-                        <li>Node.js</li>
-                        <li>React.js</li>
-                        <li>Git (Version Control)</li>
-                        <li>Responsive & Material Design</li>
-                        <li>Photoshop</li>
-                    </ul>
+                <div class="list-group list-group-flush">
+                    <a class="list-group-item flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">JavaScript</h5>
+                        </div>
+                        <p class="mb-1">Years of experience with frameworks, interfaces, and other add-ons such as AngularJS, Node.js, React.js, and jQuery.</p>
+                    </a>
+                    <a class="list-group-item flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Web & Application Design</h5>
+                        </div>
+                        <p class="mb-1">Worked with HTML and CSS (including Less and Sass) in designing the front-end of websites and web applications. Built Android applications following material design principles.</p>
+                    </a>
+                    <a class="list-group-item flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Programming Languages</h5>
+                        </div>
+                        <p class="mb-1">Knowledgeable in Python, C, C++, and Java through many personal projects and class assignments.</p>
+                    </a>
+                    <a class="list-group-item flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Version Control</h5>
+                            </div>
+                            <p class="mb-1">Experienced with Git and its commonly used platforms such as GitHub and GitLab.</p>
+                        </a>
+                        <a class="list-group-item flex-column align-items-start">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Miscellaneous</h5>
+                            </div>
+                            <p class="mb-1">Adept at using the Microsoft Office suite (Word, Excel, PowerPoint, etc.), and Adobe Photoshop.</p>
+                        </a>
                 </div>
             </div>
         </div>
@@ -46,32 +54,31 @@
             <h1 class="about-header">Highlights</h1>
             <div class="row highlights">
                 <div class="col-md-5 img-holder">
-                    <img src="" alt="Esri Canada">
+                    <img src="/images/about/esri.png" alt="Esri Canada">
                 </div>
                 <div class="col-md-7">
                     <h4>Esri Canada</h4>
                     <h6><span class="degree">GIS Analyst</span><br>June 2019 - Present</h6>
-                    <p></p>
+                    <p>Utilized the ArcGIS API to build web applications containing 3D geographic models with interactive features</p>
+                    <p>Collected data from external sources to create visualizations on top of 3D models</p>
                 </div>
             </div>
             <div class="divider"></div>
             <div class="row highlights">
                 <div class="col-md-5 img-holder cwh">
-                    <img src="" alt="Canadian Web Hosting">
+                    <img src="/images/about/cwh.png" alt="Canadian Web Hosting">
                 </div>
                 <div class="col-md-7">
                     <h4>Canadian Web Hosting</h4>
                     <h6><span class="degree">Junior Programmer</span><br>April 2018 - February 2019</h6>
-                    <p>Developed web applications for the company and its subsidiaries, primarily in JavaScript using Node.js</p>
                     <p>Focused on front-end and back-end aspects of projects, from designing the layout and CSS of websites to managing databases and writing logic for applications</p>
-                    <p>Collaborated with team members around the world, using GitLab to maintain code quality and coherence</p>
                     <p>Leveraged knowledge in Full Stack web development, Git, algorithms & data structures, JavaScript, and debugging with Chrome Dev Tools</p>
                 </div>
             </div>
             <div class="divider"></div>
             <div class="row highlights">
                 <div class="col-md-5 img-holder">
-                    <img src="https://c1.staticflickr.com/6/5621/21105291931_762386557d_b.jpg" alt="Simon Fraser University">
+                    <img src="/images/about/sfu.png" alt="Simon Fraser University">
                 </div>
                 <div class="col-md-7">
                     <h4>Simon Fraser University</h4>
@@ -82,12 +89,12 @@
             <div class="divider"></div>
             <div class="row highlights">
                 <div class="col-md-5 img-holder">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Langara_Library.jpg" alt="Langara College">
+                    <img src="/images/about/langara.png" alt="Langara College">
                 </div>
                 <div class="col-md-7">
                     <h4>Langara College</h4>
                     <h6><span class="degree">Computer Science</span><br>January 2015 - December 2017</h6>
-                    <p>Dean’s Honour Roll -Spring 2016, Fall 2016</p>
+                    <p>Dean’s Honour Roll: Spring 2016, Fall 2016</p>
                 </div>
             </div>
         </div>
