@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/blog/What-Canucks-Have-Markus-Granlund/</loc>
-<lastmod>2017-08-17T00:00:00-07:00</lastmod>
+<loc>http://localhost:4000/blog/Detecting-Tweet-Sentiment-Ordinal_Classification/</loc>
+<lastmod>2019-12-08T00:00:00-08:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/blog/Analyzing-Bo-Horvat-Next-Contract/</loc>
-<lastmod>2017-09-07T00:00:00-07:00</lastmod>
+<loc>http://localhost:4000/blog/C-TIP-Total-Infected-Prediction-COVID-19/</loc>
+<lastmod>2020-04-10T00:00:00-07:00</lastmod>
 </url>
 <url>
-<loc>http://localhost:4000/blog/Analyzing-Bo-Horvat-New-Contract/</loc>
-<lastmod>2017-10-12T00:00:00-07:00</lastmod>
+<loc>http://localhost:4000/hidden_posts/2017-10-12-Analyzing-Bo-Horvat-New-Contract/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/blog/Online-Activism-Effects-Political-Discourse-United-States/</loc>
-<lastmod>2018-12-01T00:00:00-08:00</lastmod>
+<loc>http://localhost:4000/hidden_posts/2017-8-17-What-Canucks-Have-Markus-Granlund/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/about/</loc>
+<loc>http://localhost:4000/hidden_posts/2017-9-7-Analyzing-Bo-Horvat-Next-Contract/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/hidden_posts/2018-12-1-Online-Activism-Effects-Political-Discourse-United-States/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/apps/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/blog/</loc>
@@ -27,6 +31,6 @@
 </url>
 <url>
 <loc>http://localhost:4000/assets/Resume.pdf</loc>
-<lastmod>2019-07-22T11:14:27-07:00</lastmod>
+<lastmod>2020-12-29T16:09:07-08:00</lastmod>
 </url>
 </urlset>

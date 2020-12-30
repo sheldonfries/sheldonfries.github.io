@@ -168,11 +168,13 @@ h1, p {
 }
 
 .footer {
-    background-color: white;
-    color: #444444;
-    font-size: 15px;
     text-align: center;
-    border-top: 1px solid #dddddd;
+}
+
+.footer > nav {
+    float: none;
+    display: inline-block;
+    background-color: white;
 }
 
 .dropdown-header {

@@ -66,6 +66,11 @@ p {
   line-height: 1.75;
 }
 
+li {
+  font-size: 0.95rem;
+  color: #444;
+}
+
 a {
   color: blue;
   text-decoration: none;

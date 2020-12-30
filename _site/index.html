@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="/css/about.css">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <link rel="stylesheet" href="/css/styles.css">
@@ -13,22 +14,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   </head>
   <body>
-      <nav class="navbar navbar-dark navbar-expand-md">
+      <nav class="navbar navbar-dark navbar-expand-md bg-dark fixed-top pr-5">
     <a class="navbar-brand" href="/">sheldonfries</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="ml-auto navbar-nav">
-            <a class="nav-item nav-link" href="/">Home</a>
+            <!-- <a class="nav-item nav-link" href="/apps">Apps</a> -->
             <li class="dropdown nav-item">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Apps<span class="caret"></span></a>
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Research<span class="caret"></span></a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/blog/Detecting-Tweet-Sentiment-Ordinal_Classification/">Detecting Tweet Sentiment</a>
+                    <a class="dropdown-item" href="/blog/C-TIP-Total-Infected-Prediction-COVID-19/">COVID-19 SIR Projection</a>
+                </div>
+            </li>
+            <li class="dropdown nav-item">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Projects<span class="caret"></span></a>
                 <div class="dropdown-menu">
                     <span class="dropdown-header">Android Apps</span>
                     <a class="dropdown-item" href="https://play.google.com/store/apps/details?id=cc.cu.hockeycalculator.goofspiel&hl=en">Goofspiel</a>
                     <a class="dropdown-item" href="https://play.google.com/store/apps/details?id=cc.cu.hockeycalculator.hiittimer&hl=en">HIIT Timer</a>
                     <a class="dropdown-item" href="https://play.google.com/store/apps/details?id=com.companyname.Jumpy_Cat">Jumpy Cat</a>
                     <span class="dropdown-header">Web Apps</span>
+                    <a class="dropdown-item" href="https://sheldonfries.com/transit">Transit</a>
                     <a class="dropdown-item" href="http://hockey.sheldonfries.com">Hockey Calculator</a>
                     <a class="dropdown-item" href="https://github.com/sheldonfries/login-page">Login Page</a>
                     <span class="dropdown-header">Miscellaneous</span>
@@ -36,52 +45,121 @@
                     <a class="dropdown-item" href="https://github.com/sheldonfries/TOSDataPuller">TOSDataPuller</a>
                 </div>
             </li>
-            <a class="nav-item nav-link" href="/about">About</a>
-            <a class="nav-item nav-link" href="/blog">Blog</a>
+            <!-- <a class="nav-item nav-link" href="/blog">Blog</a> -->
         </ul>
     </div>
 </nav>
 
-      <div class="container-fluid">
+      <div class="container">
         <div id="middle">
-    <div class="row timer">
-        <div class="col-md-7">
-            <div class="desctimer">
-                <div class="pic mobile">
-                    <img src="images/phone4.png">
+    <div id="content">
+        <div id="aboutme">
+            <div class="col about-holder">
+                <img class="about-pic" src="/images/sheldon.jpg" alt="Sheldon Fries">
+                <h1>Sheldon Fries</h1>
+                <p class="about-text">I'm a Developer at Esri Canada with 3 years of experience in the industry.
+                    In my free time, I enjoy coding side projects, watching and writing about hockey, and lifting.
+                    Previously, I've studied Computer Science at Simon Fraser Univeristy and Langara College, and worked at Canadian Web Hosting as a Junior Programmer.
+                </p>
+                <a class="btn btn-outline-primary" href="/assets/Resume.pdf" target="_blank" role="button">View Resume</a>
+            </div>
+        </div>
+        <div class="margin-top-large"></div>
+        <div id="technologies">
+            <h1 class="about-header">Technologies</h1>
+            <div class="row technologies">
+                <div class="list-group list-group-flush">
+                    <a class="list-group-item flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">JavaScript</h5>
+                        </div>
+                        <p class="mb-1">Years of experience with frameworks, interfaces, and other add-ons such as Angular, Node.js, React.js, and jQuery.</p>
+                    </a>
+                    <a class="list-group-item flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Web & Application Design</h5>
+                        </div>
+                        <p class="mb-1">Worked with HTML and CSS (including Less and Sass) in designing the front-end of websites and web applications. Built Android applications following material design principles.</p>
+                    </a>
+                    <a class="list-group-item flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Programming Languages</h5>
+                        </div>
+                        <p class="mb-1">Knowledgeable in Python, C, C++, and Java through work, personal projects, and class assignments.</p>
+                    </a>
+                    <a class="list-group-item flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Version Control</h5>
+                        </div>
+                        <p class="mb-1">Experienced with Git and its commonly used platforms such as GitHub and GitLab.</p>
+                    </a>
+                    <a class="list-group-item flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Miscellaneous</h5>
+                        </div>
+                        <p class="mb-1">Adept at using the Microsoft Office suite (Word, Excel, PowerPoint, etc.), and Adobe Photoshop.</p>
+                    </a>
                 </div>
-                <h1>HIIT TIMER</h1>
-                <p>HIIT Timer is a simple, easy-to-use application to be used with an HIIT/Tabata workout routine. The two alternating timers allow for one working or sprinting rep followed by a rest rep. In the settings, there is an optional 3 second start timer which allows the user to put their phone in their pocket before training.</p>
-                <a class="download btn btn-light btn-lg" href="https://play.google.com/store/apps/details?id=cc.cu.hockeycalculator.hiittimer" target="_blank"><i class="fa fa-download" aria-hidden="true"></i> Download</a>
             </div>
         </div>
-        <div class="col-md-5">
-            <div class="timer-pic lg-device">
-                <img src="images/phone4.png">
-            </div>
-        </div>
-    </div>
-    <div class="row goofspiel">
-        <div class="col-md-5">
-            <div class="goof-pic lg-device">
-                <img src="images/phone3.png">
-            </div>
-        </div>
-        <div class="col-md-7">
-            <div class="descgoof">
-                <div class="pic mobile">
-                    <img src="images/phone3.png">
+        <div class="margin-top-large"></div>
+        <div id="highlights">
+            <h1 class="about-header">Highlights</h1>
+            <div class="row highlights">
+                <div class="col-md-5 img-holder">
+                    <img src="/images/about/esri.png" alt="Esri Canada">
                 </div>
-                <h1>GOOFSPIEL</h1>
-                <p>Goofspiel is a simple card game for two or more players, requiring a certain level of strategy to win. Each player is given one suit from the deck and plays for cards from the Spade suit. The goal of the game is to end up with higher valued cards than your opponent by playing higher ranked cards of your own. Once all 13 Spade cards have been won, the player with the highest point value wins the game.</p>
-                <a class="download btn btn-light btn-lg" href="https://play.google.com/store/apps/details?id=cc.cu.hockeycalculator.goofspiel&hl=en" target="_blank"><i class="fa fa-download" aria-hidden="true"></i> Download</a>
+                <div class="col-md-7">
+                    <h4>Esri Canada</h4>
+                    <h6><span class="degree">Developer</span><br>May 2020 - Present</h6>
+                    <p>Developed and maintained web applications for clients using Angular/TypeScript</p>
+                    <p>Wrote automation scripts in Python to aide team members in 3D building model digitization process</p>
+                    <h6><span class="degree">GIS Analyst</span><br>June 2019 - May 2020</h6>
+                    <p>Utilized the ArcGIS API to build web applications containing 3D geographic models with interactive features</p>
+                    <p>Collected data from external sources to create visualizations on top of 3D models</p>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="row highlights">
+                <div class="col-md-5 img-holder cwh">
+                    <img src="/images/about/cwh.png" alt="Canadian Web Hosting">
+                </div>
+                <div class="col-md-7">
+                    <h4>Canadian Web Hosting</h4>
+                    <h6><span class="degree">Junior Programmer</span><br>April 2018 - February 2019</h6>
+                    <p>Focused on front-end and back-end aspects of projects, from designing the layout and CSS of websites to managing databases and writing logic for applications</p>
+                    <p>Leveraged knowledge in Full Stack web development, Git, algorithms & data structures, JavaScript, and debugging with Chrome Dev Tools</p>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="row highlights">
+                <div class="col-md-5 img-holder">
+                    <img src="/images/about/sfu.png" alt="Simon Fraser University">
+                </div>
+                <div class="col-md-7">
+                    <h4>Simon Fraser University</h4>
+                    <h6><span class="degree">BSc, Computing Science</span><br>January 2018 - April 2020</h6>
+                    <p>Programming coursework in algorithms & data structures, operating systems, networking, databases, machine learning, and software engineering</p>
+                    <p>Dean’s Honour Roll: Spring 2020</p>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class="row highlights">
+                <div class="col-md-5 img-holder">
+                    <img src="/images/about/langara.png" alt="Langara College">
+                </div>
+                <div class="col-md-7">
+                    <h4>Langara College</h4>
+                    <h6><span class="degree">Computer Science</span><br>January 2015 - December 2017</h6>
+                    <p>Dean’s Honour Roll: Spring 2016, Fall 2016</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
-        <div class="footer">
-    <nav class="navbar navbar-light navbar-expand-lg bg-light justify-content-between">
-        <span>&copy; 2019 Sheldon Fries</span>
+      </div>
+      <div class="footer">
+    <nav class="navbar navbar-light navbar-expand-lg justify-content-between">
         <ul class="navbar-nav social-nav">
             <li class="nav-item social">
                 <a class="nav-link" href="https://github.com/sheldonfries" target="_blank"><i class="fab fa-github"></i></a>
@@ -98,6 +176,6 @@
         </ul>
     </nav>
 </div> 
-      </div>
+
   </body>
 </html>
