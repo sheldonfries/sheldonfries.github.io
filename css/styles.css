@@ -16,16 +16,16 @@ body {
 
 .navbar {
     /*border-bottom: 1px solid #dddddd; */
-    background: rgba(0,0,0,0);
+    color: #ccd6f6;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+.navbar > a, .nav-link {
+    color: #ccd6f6;
 }
 
 h1 {
    font-family: 'Inter', sans-serif; 
-}
-
-h1, p {
-   color: #4a4a4a;
 }
 
 .row {
@@ -82,7 +82,6 @@ h1, p {
 }
 
 #middle {
-    background-color: white;
     background-size: 100%;
     width: 100%;
 }
@@ -157,9 +156,8 @@ h1, p {
     padding: 10%;
 }
 
-.btn {
-    border-radius: 25px;
-    background: none;
+.btn:hover {
+    background-color: rgba(13, 110, 253, 0.25)
 }
 
 .download {
@@ -174,7 +172,6 @@ h1, p {
 .footer > nav {
     float: none;
     display: inline-block;
-    background-color: white;
 }
 
 .dropdown-header {
