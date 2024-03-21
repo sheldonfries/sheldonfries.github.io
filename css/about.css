@@ -1,6 +1,5 @@
 body {
-    background: #0a192f !important;
-    color: #8892b0 !important;
+    color: #5c5c5c !important;
 }
 
 h1 {
@@ -52,11 +51,11 @@ h1 {
 }
 
 .highlights {
-    padding: 0 25%;
+    padding: 0 15%;
 }
 
 .technologies {
-    padding: 0 25%;
+    padding: 0 20%;
 }
 
 .divider {
@@ -99,7 +98,7 @@ h6 {
 }
 
 .list-group-item {
-    background: #0a192f !important;
+    border: 0 !important;
 }
 
 .list-group-item::before {

@@ -14,14 +14,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   </head>
   <body>
-      <nav class="navbar navbar-dark navbar-expand-md bg-dark fixed-top pr-5">
-    <a class="navbar-brand" href="/">sheldonfries</a>
+      <nav class="navbar navbar-expand-md pr-5">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="ml-auto navbar-nav">
-            <!-- <a class="nav-item nav-link" href="/apps">Apps</a> -->
+            <a class="nav-item nav-link" href="/">Home</a>
             <li class="dropdown nav-item">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Research<span class="caret"></span></a>
                 <div class="dropdown-menu">
@@ -44,7 +43,6 @@
                     <a class="dropdown-item" href="https://github.com/sheldonfries/nhl-study">NHL Player Study</a>
                 </div>
             </li>
-            <a class="nav-item nav-link btn btn-outline-primary" href="/assets/Resume.pdf" target="_blank" role="button">Resume</a>
             <!-- <a class="nav-item nav-link" href="/blog">Blog</a> -->
         </ul>
     </div>
@@ -148,122 +146,122 @@
 <h1 id="code">Code</h1>
 <p>We used the scikit-learn and Natural Language Toolkit (nltk) packages to experiment with various algorithms and machine learning models. The code below includes the portions of our program which depend on these packages.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">nltk</span>
-<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
-<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
-<span class="kn">from</span> <span class="nn">nltk</span> <span class="kn">import</span> <span class="n">ngrams</span>
-<span class="kn">from</span> <span class="nn">nltk.stem</span> <span class="kn">import</span> <span class="n">PorterStemmer</span><span class="p">,</span> <span class="n">WordNetLemmatizer</span> 
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">nltk</span>
+<span class="kn">from</span> <span class="n">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="n">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+<span class="kn">from</span> <span class="n">nltk</span> <span class="kn">import</span> <span class="n">ngrams</span>
+<span class="kn">from</span> <span class="n">nltk.stem</span> <span class="kn">import</span> <span class="n">PorterStemmer</span><span class="p">,</span> <span class="n">WordNetLemmatizer</span> 
 
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_classification</span>
-<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">preprocessing</span><span class="p">,</span> <span class="n">svm</span><span class="p">,</span> <span class="n">linear_model</span><span class="p">,</span> <span class="n">metrics</span>
-<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span><span class="p">,</span> <span class="n">CountVectorizer</span>
-<span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="kn">import</span> <span class="n">resample</span>
-<span class="kn">from</span> <span class="nn">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span><span class="p">,</span> <span class="n">MultinomialNB</span><span class="p">,</span> <span class="n">BernoulliNB</span><span class="p">,</span> <span class="n">ComplementNB</span>
+<span class="kn">from</span> <span class="n">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
+<span class="kn">from</span> <span class="n">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_classification</span>
+<span class="kn">from</span> <span class="n">sklearn</span> <span class="kn">import</span> <span class="n">preprocessing</span><span class="p">,</span> <span class="n">svm</span><span class="p">,</span> <span class="n">linear_model</span><span class="p">,</span> <span class="n">metrics</span>
+<span class="kn">from</span> <span class="n">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span><span class="p">,</span> <span class="n">CountVectorizer</span>
+<span class="kn">from</span> <span class="n">sklearn.utils</span> <span class="kn">import</span> <span class="n">resample</span>
+<span class="kn">from</span> <span class="n">sklearn.naive_bayes</span> <span class="kn">import</span> <span class="n">GaussianNB</span><span class="p">,</span> <span class="n">MultinomialNB</span><span class="p">,</span> <span class="n">BernoulliNB</span><span class="p">,</span> <span class="n">ComplementNB</span>
 
 
-<span class="k">def</span> <span class="nf">process_tweets</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stopwords_file</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">process_tweets</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">stopwords_file</span><span class="p">):</span>
 
-    <span class="c"># get stop words</span>
-    <span class="n">swfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">stopwords_file</span><span class="p">,</span> <span class="s">'r'</span><span class="p">)</span>
-    <span class="n">stopwords</span> <span class="o">=</span> <span class="n">swfile</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-    <span class="n">swfile</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="c1"># get stop words
+</span>    <span class="n">swfile</span> <span class="o">=</span> <span class="nf">open</span><span class="p">(</span><span class="n">stopwords_file</span><span class="p">,</span> <span class="sh">'</span><span class="s">r</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">stopwords</span> <span class="o">=</span> <span class="n">swfile</span><span class="p">.</span><span class="nf">readlines</span><span class="p">()</span>
+    <span class="n">swfile</span><span class="p">.</span><span class="nf">close</span><span class="p">()</span>
 
-    <span class="c"># remove \n from each stop word</span>
-    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># remove \n from each stop word
+</span>    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">stopwords</span><span class="p">:</span>
-        <span class="n">stopwords</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span><span class="p">,</span><span class="s">''</span><span class="p">)</span>
+        <span class="n">stopwords</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">word</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="sh">'</span><span class="se">\n</span><span class="sh">'</span><span class="p">,</span><span class="sh">''</span><span class="p">)</span>
         <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
     
-    <span class="c"># 4. Stemming</span>
-    <span class="n">stemmer</span> <span class="o">=</span> <span class="n">PorterStemmer</span><span class="p">()</span>
-    <span class="n">words</span> <span class="o">=</span> <span class="n">tweet</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+    <span class="c1"># 4. Stemming
+</span>    <span class="n">stemmer</span> <span class="o">=</span> <span class="nc">PorterStemmer</span><span class="p">()</span>
+    <span class="n">words</span> <span class="o">=</span> <span class="n">tweet</span><span class="p">.</span><span class="nf">split</span><span class="p">()</span>
     <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
-        <span class="n">newWord</span> <span class="o">=</span> <span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
-        <span class="n">tweet</span> <span class="o">=</span> <span class="n">tweet</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">newWord</span><span class="p">)</span>
+        <span class="n">newWord</span> <span class="o">=</span> <span class="n">stemmer</span><span class="p">.</span><span class="nf">stem</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+        <span class="n">tweet</span> <span class="o">=</span> <span class="n">tweet</span><span class="p">.</span><span class="nf">replace</span><span class="p">(</span><span class="n">word</span><span class="p">,</span> <span class="n">newWord</span><span class="p">)</span>
         
 <span class="k">def</span> <span class="nf">ensembleClassify</span><span class="p">():</span>
 
-    <span class="c"># Our four best performing classifiers were: Linear SVC, SVM, MutlinomialNB, and Logistic Regression</span>
-    <span class="c"># so we take these classifiers and build our ensemble classifier.</span>
-
-    <span class="c"># Multinomial NB </span>
-    <span class="n">MultiNB</span> <span class="o">=</span> <span class="n">MultinomialNB</span><span class="p">()</span>
-    <span class="n">MultiNB</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">train_valence</span><span class="p">)</span>
-    <span class="n">MultiNB_results</span> <span class="o">=</span> <span class="n">MultiNB</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">testX</span><span class="p">)</span>
-    <span class="n">MultiNB_score</span> <span class="o">=</span> <span class="n">MultiNB</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">testX</span><span class="p">,</span> <span class="n">test_valence</span><span class="p">)</span>
+    <span class="c1"># Our four best performing classifiers were: Linear SVC, SVM, MutlinomialNB, and Logistic Regression
+</span>    <span class="c1"># so we take these classifiers and build our ensemble classifier.
+</span>
+    <span class="c1"># Multinomial NB 
+</span>    <span class="n">MultiNB</span> <span class="o">=</span> <span class="nc">MultinomialNB</span><span class="p">()</span>
+    <span class="n">MultiNB</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">train_valence</span><span class="p">)</span>
+    <span class="n">MultiNB_results</span> <span class="o">=</span> <span class="n">MultiNB</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="n">testX</span><span class="p">)</span>
+    <span class="n">MultiNB_score</span> <span class="o">=</span> <span class="n">MultiNB</span><span class="p">.</span><span class="nf">score</span><span class="p">(</span><span class="n">testX</span><span class="p">,</span> <span class="n">test_valence</span><span class="p">)</span>
     
-    <span class="c"># Logistic Regression</span>
-    <span class="n">logreg</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s">'lbfgs'</span><span class="p">,</span> <span class="n">multi_class</span><span class="o">=</span><span class="s">'multinomial'</span><span class="p">)</span>
-    <span class="n">logreg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">train_valence</span><span class="p">)</span>
-    <span class="n">logreg_results</span> <span class="o">=</span> <span class="n">logreg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">testX</span><span class="p">)</span>
-    <span class="n">logreg_score</span> <span class="o">=</span> <span class="n">logreg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">testX</span><span class="p">,</span> <span class="n">test_valence</span><span class="p">)</span>
+    <span class="c1"># Logistic Regression
+</span>    <span class="n">logreg</span> <span class="o">=</span> <span class="n">linear_model</span><span class="p">.</span><span class="nc">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="sh">'</span><span class="s">lbfgs</span><span class="sh">'</span><span class="p">,</span> <span class="n">multi_class</span><span class="o">=</span><span class="sh">'</span><span class="s">multinomial</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">logreg</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">train_valence</span><span class="p">)</span>
+    <span class="n">logreg_results</span> <span class="o">=</span> <span class="n">logreg</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="n">testX</span><span class="p">)</span>
+    <span class="n">logreg_score</span> <span class="o">=</span> <span class="n">logreg</span><span class="p">.</span><span class="nf">score</span><span class="p">(</span><span class="n">testX</span><span class="p">,</span> <span class="n">test_valence</span><span class="p">)</span>
 
-    <span class="c"># Linear SVC</span>
-    <span class="n">SVC</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">LinearSVC</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">)</span>
-    <span class="n">SVC</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">train_valence</span><span class="p">)</span>
-    <span class="n">SVC_results</span> <span class="o">=</span> <span class="n">SVC</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">testX</span><span class="p">)</span>
-    <span class="n">SVC_score</span> <span class="o">=</span> <span class="n">SVC</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">testX</span><span class="p">,</span> <span class="n">test_valence</span><span class="p">)</span>
+    <span class="c1"># Linear SVC
+</span>    <span class="n">SVC</span> <span class="o">=</span> <span class="n">svm</span><span class="p">.</span><span class="nc">LinearSVC</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">)</span>
+    <span class="n">SVC</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">train_valence</span><span class="p">)</span>
+    <span class="n">SVC_results</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="n">testX</span><span class="p">)</span>
+    <span class="n">SVC_score</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">.</span><span class="nf">score</span><span class="p">(</span><span class="n">testX</span><span class="p">,</span> <span class="n">test_valence</span><span class="p">)</span>
 
-    <span class="c"># SVM </span>
-    <span class="n">SVM</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">kernel</span><span class="o">=</span><span class="s">'linear'</span><span class="p">,</span> <span class="n">degree</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="s">'auto'</span><span class="p">)</span>
-    <span class="n">SVM</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">train_valence</span><span class="p">)</span>
-    <span class="n">SVM_results</span> <span class="o">=</span> <span class="n">SVM</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">testX</span><span class="p">)</span>
-    <span class="n">SVM_score</span> <span class="o">=</span> <span class="n">SVM</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">testX</span><span class="p">,</span> <span class="n">test_valence</span><span class="p">)</span>
+    <span class="c1"># SVM 
+</span>    <span class="n">SVM</span> <span class="o">=</span> <span class="n">svm</span><span class="p">.</span><span class="nc">SVC</span><span class="p">(</span><span class="n">C</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">kernel</span><span class="o">=</span><span class="sh">'</span><span class="s">linear</span><span class="sh">'</span><span class="p">,</span> <span class="n">degree</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">gamma</span><span class="o">=</span><span class="sh">'</span><span class="s">auto</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">SVM</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">train_valence</span><span class="p">)</span>
+    <span class="n">SVM_results</span> <span class="o">=</span> <span class="n">SVM</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="n">testX</span><span class="p">)</span>
+    <span class="n">SVM_score</span> <span class="o">=</span> <span class="n">SVM</span><span class="p">.</span><span class="nf">score</span><span class="p">(</span><span class="n">testX</span><span class="p">,</span> <span class="n">test_valence</span><span class="p">)</span>
     
 <span class="k">def</span> <span class="nf">re_sample</span><span class="p">(</span><span class="n">num_samples</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
-        <span class="n">samples</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">resample</span><span class="p">(</span><span class="n">tweets</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">],</span> <span class="n">replace</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="n">num_samples</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">))</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">):</span>
+        <span class="n">samples</span><span class="p">.</span><span class="nf">append</span><span class="p">((</span><span class="nf">resample</span><span class="p">(</span><span class="n">tweets</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">3</span><span class="p">],</span> <span class="n">replace</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="n">num_samples</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)).</span><span class="nf">tolist</span><span class="p">())</span>
 
 <span class="k">def</span> <span class="nf">downsample_zero</span><span class="p">():</span>
-    <span class="n">train_zero_downsampled</span> <span class="o">=</span> <span class="n">resample</span><span class="p">(</span><span class="n">train_zeros</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="n">num_samples</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
+    <span class="n">train_zero_downsampled</span> <span class="o">=</span> <span class="nf">resample</span><span class="p">(</span><span class="n">train_zeros</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">n_samples</span><span class="o">=</span><span class="n">num_samples</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">123</span><span class="p">)</span>
         
-<span class="n">count</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="s">'english'</span><span class="p">,</span> <span class="n">ngram_range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
-<span class="n">bag_of_words</span> <span class="o">=</span> <span class="n">count</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">train_tweets</span><span class="p">)</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">bag_of_words</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
-<span class="n">bag_of_words2</span> <span class="o">=</span> <span class="n">count</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">test_tweets</span><span class="p">)</span>
-<span class="n">testX</span> <span class="o">=</span> <span class="n">bag_of_words2</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+<span class="n">count</span> <span class="o">=</span> <span class="nc">CountVectorizer</span><span class="p">(</span><span class="n">stop_words</span><span class="o">=</span><span class="sh">'</span><span class="s">english</span><span class="sh">'</span><span class="p">,</span> <span class="n">ngram_range</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">bag_of_words</span> <span class="o">=</span> <span class="n">count</span><span class="p">.</span><span class="nf">fit_transform</span><span class="p">(</span><span class="n">train_tweets</span><span class="p">)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">bag_of_words</span><span class="p">.</span><span class="nf">toarray</span><span class="p">()</span>
+<span class="n">bag_of_words2</span> <span class="o">=</span> <span class="n">count</span><span class="p">.</span><span class="nf">transform</span><span class="p">(</span><span class="n">test_tweets</span><span class="p">)</span>
+<span class="n">testX</span> <span class="o">=</span> <span class="n">bag_of_words2</span><span class="p">.</span><span class="nf">toarray</span><span class="p">()</span>
 
-<span class="c">## Classifiers we tried but do not give us our highest score.</span>
-<span class="c">## Uncomment one of the clf to test another classifier.</span>
-<span class="c">## Make sure to comment out the svc classifier below!</span>
-<span class="c">#clf = BernoulliNB() </span>
-<span class="c">#clf = GaussianNB()</span>
-<span class="c">#clf = MultinomialNB()</span>
-<span class="c">#clf = RandomForestClassifier(n_estima tors = 200)</span>
-<span class="c">#clf = linear_model.LogisticRegression(random_state=0, C=0.5, solver='lbfgs', multi_class='multinomial')</span>
-<span class="c">#clf = svm.SVC(C=1.0, kernel='linear', degree=3, gamma='auto')</span>
-<span class="c">#clf.fit(X, train_valence)</span>
-<span class="c">#results = clf.predict(testX)</span>
-    
-<span class="c"># Our best performing classifier:</span>
-<span class="n">SVC</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">LinearSVC</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span> <span class="n">max_iter</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">)</span>
-<span class="n">SVC</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">train_valence</span><span class="p">)</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">SVC</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">testX</span><span class="p">)</span>
+<span class="c1">## Classifiers we tried but do not give us our highest score.
+## Uncomment one of the clf to test another classifier.
+## Make sure to comment out the svc classifier below!
+#clf = BernoulliNB() 
+#clf = GaussianNB()
+#clf = MultinomialNB()
+#clf = RandomForestClassifier(n_estima tors = 200)
+#clf = linear_model.LogisticRegression(random_state=0, C=0.5, solver='lbfgs', multi_class='multinomial')
+#clf = svm.SVC(C=1.0, kernel='linear', degree=3, gamma='auto')
+#clf.fit(X, train_valence)
+#results = clf.predict(testX)
+</span>    
+<span class="c1"># Our best performing classifier:
+</span><span class="n">SVC</span> <span class="o">=</span> <span class="n">svm</span><span class="p">.</span><span class="nc">LinearSVC</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-5</span><span class="p">,</span> <span class="n">max_iter</span> <span class="o">=</span> <span class="mi">2000</span><span class="p">)</span>
+<span class="n">SVC</span><span class="p">.</span><span class="nf">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">train_valence</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">.</span><span class="nf">predict</span><span class="p">(</span><span class="n">testX</span><span class="p">)</span>
 </code></pre></div></div>
 
 <p>The following code is found in each of the homework assignments. For our project, it was used to allow arguments for different training and test sets, as well as custom stop words.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">optparser</span> <span class="o">=</span> <span class="n">optparse</span><span class="o">.</span><span class="n">OptionParser</span><span class="p">()</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">optparser</span> <span class="o">=</span> <span class="n">optparse</span><span class="p">.</span><span class="nc">OptionParser</span><span class="p">()</span>
 
-<span class="n">optparser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s">"-c"</span><span class="p">,</span> <span class="s">"--trainingdata"</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">'train'</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">'data'</span><span class="p">,</span> <span class="s">'train.txt'</span><span class="p">),</span> <span class="n">help</span><span class="o">=</span><span class="s">"training data"</span><span class="p">)</span>
-<span class="n">optparser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s">"-i"</span><span class="p">,</span> <span class="s">"--inputfile"</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">"input"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">'data'</span><span class="p">,</span> <span class="s">'test.txt'</span><span class="p">),</span> <span class="n">help</span><span class="o">=</span><span class="s">"file to analyze"</span><span class="p">)</span>
-<span class="n">optparser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s">"-l"</span><span class="p">,</span> <span class="s">"--logfile"</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">"logfile"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">"log file for debugging"</span><span class="p">)</span>
-<span class="n">optparser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s">"-m"</span><span class="p">,</span> <span class="s">"--model"</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">"model"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">"NB Classifier model"</span><span class="p">)</span>
-<span class="n">optparser</span><span class="o">.</span><span class="n">add_option</span><span class="p">(</span><span class="s">"-s"</span><span class="p">,</span> <span class="s">"--stop"</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="s">"stop"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s">'stopwords.txt'</span><span class="p">),</span> <span class="n">help</span><span class="o">=</span><span class="s">"List of stop words"</span><span class="p">)</span>
+<span class="n">optparser</span><span class="p">.</span><span class="nf">add_option</span><span class="p">(</span><span class="sh">"</span><span class="s">-c</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">--trainingdata</span><span class="sh">"</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="sh">'</span><span class="s">train</span><span class="sh">'</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="sh">'</span><span class="s">data</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">train.txt</span><span class="sh">'</span><span class="p">),</span> <span class="n">help</span><span class="o">=</span><span class="sh">"</span><span class="s">training data</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">optparser</span><span class="p">.</span><span class="nf">add_option</span><span class="p">(</span><span class="sh">"</span><span class="s">-i</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">--inputfile</span><span class="sh">"</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="sh">"</span><span class="s">input</span><span class="sh">"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="sh">'</span><span class="s">data</span><span class="sh">'</span><span class="p">,</span> <span class="sh">'</span><span class="s">test.txt</span><span class="sh">'</span><span class="p">),</span> <span class="n">help</span><span class="o">=</span><span class="sh">"</span><span class="s">file to analyze</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">optparser</span><span class="p">.</span><span class="nf">add_option</span><span class="p">(</span><span class="sh">"</span><span class="s">-l</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">--logfile</span><span class="sh">"</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="sh">"</span><span class="s">logfile</span><span class="sh">"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="sh">"</span><span class="s">log file for debugging</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">optparser</span><span class="p">.</span><span class="nf">add_option</span><span class="p">(</span><span class="sh">"</span><span class="s">-m</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">--model</span><span class="sh">"</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="sh">"</span><span class="s">model</span><span class="sh">"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="sh">"</span><span class="s">NB Classifier model</span><span class="sh">"</span><span class="p">)</span>
+<span class="n">optparser</span><span class="p">.</span><span class="nf">add_option</span><span class="p">(</span><span class="sh">"</span><span class="s">-s</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">--stop</span><span class="sh">"</span><span class="p">,</span> <span class="n">dest</span><span class="o">=</span><span class="sh">"</span><span class="s">stop</span><span class="sh">"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="sh">'</span><span class="s">stopwords.txt</span><span class="sh">'</span><span class="p">),</span> <span class="n">help</span><span class="o">=</span><span class="sh">"</span><span class="s">List of stop words</span><span class="sh">"</span><span class="p">)</span>
 
-<span class="p">(</span><span class="n">opts</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">optparser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+<span class="p">(</span><span class="n">opts</span><span class="p">,</span> <span class="n">_</span><span class="p">)</span> <span class="o">=</span> <span class="n">optparser</span><span class="p">.</span><span class="nf">parse_args</span><span class="p">()</span>
 </code></pre></div></div>
 
 <p>Additionally, the demoji package was used to replace emojis in tweets with their matching description.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">demoji</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="n">demoji</span>
 
-<span class="n">demoji</span><span class="o">.</span><span class="n">download_codes</span><span class="p">()</span>
+<span class="n">demoji</span><span class="p">.</span><span class="nf">download_codes</span><span class="p">()</span>
 
-<span class="n">emoji_list</span> <span class="o">=</span> <span class="n">demoji</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">tweet</span><span class="p">)</span> <span class="c"># remove emojis</span>
-<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">emoji_list</span><span class="p">:</span>
-    <span class="n">tweet</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s">u'</span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="n">key</span><span class="p">,</span> <span class="s">u'</span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="n">emoji_list</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">tweet</span><span class="p">)</span>
+<span class="n">emoji_list</span> <span class="o">=</span> <span class="n">demoji</span><span class="p">.</span><span class="nf">findall</span><span class="p">(</span><span class="n">tweet</span><span class="p">)</span> <span class="c1"># remove emojis
+</span><span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">emoji_list</span><span class="p">:</span>
+    <span class="n">tweet</span> <span class="o">=</span> <span class="n">re</span><span class="p">.</span><span class="nf">sub</span><span class="p">(</span><span class="sa">u</span><span class="sh">'</span><span class="s">%s</span><span class="sh">'</span> <span class="o">%</span> <span class="n">key</span><span class="p">,</span> <span class="sa">u</span><span class="sh">'</span><span class="s">%s</span><span class="sh">'</span> <span class="o">%</span> <span class="n">emoji_list</span><span class="p">[</span><span class="n">key</span><span class="p">],</span> <span class="n">tweet</span><span class="p">)</span>
 </code></pre></div></div>
 
 <hr />

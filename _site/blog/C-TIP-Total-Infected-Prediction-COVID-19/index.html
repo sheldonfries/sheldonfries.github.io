@@ -14,14 +14,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   </head>
   <body>
-      <nav class="navbar navbar-dark navbar-expand-md bg-dark fixed-top pr-5">
-    <a class="navbar-brand" href="/">sheldonfries</a>
+      <nav class="navbar navbar-expand-md pr-5">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="ml-auto navbar-nav">
-            <!-- <a class="nav-item nav-link" href="/apps">Apps</a> -->
+            <a class="nav-item nav-link" href="/">Home</a>
             <li class="dropdown nav-item">
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Research<span class="caret"></span></a>
                 <div class="dropdown-menu">
@@ -44,7 +43,6 @@
                     <a class="dropdown-item" href="https://github.com/sheldonfries/nhl-study">NHL Player Study</a>
                 </div>
             </li>
-            <a class="nav-item nav-link btn btn-outline-primary" href="/assets/Resume.pdf" target="_blank" role="button">Resume</a>
             <!-- <a class="nav-item nav-link" href="/blog">Blog</a> -->
         </ul>
     </div>
@@ -188,11 +186,11 @@ Department of Computing Science - Simon Fraser University</p>
 
 <p>The problem with the vector calculation is the MATLAB differential equation solver does not return consistent length vector when changing the parameter and the actual infection, recovered number we got from the data set is recorded per day. To tackle this, we end up constructing the cost function based on the actual number from the data set and for each entry find the prediction that has the closest value to each day and compare the difference of their number of infection and recovered.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">For</span> <span class="p">(</span><span class="n">each_day</span><span class="p">){</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">For </span><span class="p">(</span><span class="n">each_day</span><span class="p">){</span>
 
-<span class="n">prediction_index</span> <span class="o">=</span> <span class="n">minimum</span> <span class="p">(</span> <span class="nb">abs</span><span class="p">(</span><span class="n">prediction_time</span> <span class="err">–</span> <span class="n">each_day</span><span class="p">)</span> <span class="p">);</span>
+<span class="n">prediction_index</span> <span class="o">=</span> <span class="nf">minimum </span><span class="p">(</span> <span class="nf">abs</span><span class="p">(</span><span class="n">prediction_time</span> <span class="err">–</span> <span class="n">each_day</span><span class="p">)</span> <span class="p">);</span>
 
-<span class="n">cost</span> <span class="o">+=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">actual_data</span><span class="p">(</span><span class="n">eachday</span><span class="p">)</span> <span class="err">–</span> <span class="n">prediction_data</span><span class="p">(</span><span class="n">prediction_index</span><span class="p">)</span> <span class="p">);</span>
+<span class="n">cost</span> <span class="o">+=</span> <span class="nf">abs</span><span class="p">(</span><span class="nf">actual_data</span><span class="p">(</span><span class="n">eachday</span><span class="p">)</span> <span class="err">–</span> <span class="nf">prediction_data</span><span class="p">(</span><span class="n">prediction_index</span><span class="p">)</span> <span class="p">);</span>
 
 <span class="p">}</span>
 </code></pre></div></div>
