@@ -1,13 +1,13 @@
-body {
-    color: #5c5c5c !important;
-}
-
 h1 {
     color: #ccd6f6;
 }
 
-#aboutme {
-    padding-top: 80px;
+#left {
+    text-align: left;
+}
+
+#right {
+    text-align: left;
 }
 
 .about-header {
@@ -15,29 +15,17 @@ h1 {
     margin-bottom: 50px;
 }
 
-.about-header::before, .about-header::after {
-    content: " ";
-    display: inline-block;
-    height: 2px;
-    margin: 0 20px 10px 20px;
-    width: 20%;
-    top: 50%;
-    background-color: rgb(51, 51, 51);
-    background-repeat: repeat;
-    background-attachment: scroll;
-    background-image: none;
-    background-size: auto auto;
-    background-origin: padding-box;
-    background-clip: border-box;
+.about-text {
+    margin-right: 10%;
 }
 
-.row {
-    height: auto !important;
+
+.emphasis {
+    color: rgb(226 232 240/1)
 }
 
-#content {
-    padding-bottom: 40px;
-    font-family: 'Open Sans', sans-serif;
+.name-text {
+    font-weight: bolder;
 }
 
 .img-holder {
@@ -48,23 +36,6 @@ h1 {
     max-width: 60%;
     border-radius: 5%;
     margin-top: 5px;
-}
-
-.highlights {
-    padding: 0 15%;
-}
-
-.technologies {
-    padding: 0 20%;
-}
-
-.divider {
-  height: 1px;
-  width: 50%;
-  display:block;
-  margin: 30px auto;
-  overflow: hidden;
-  background-color: rgb(51, 51, 51);
 }
 
 h4 {
@@ -79,60 +50,27 @@ h6 {
     font-weight: bold;
 }
 
-.about-holder {
-    text-align: center;
+.text-sm {
+    font-size: .875rem;
 }
 
-.about-pic {
-    border-radius: 100px;
-    margin-bottom: 25px;
-}
-
-.about-text {
-    padding: 0 26%;
-    text-align: left;
-}
-
-.list-group {
-    padding-left: 5px !important;
-}
-
-.list-group-item {
-    border: 0 !important;
-}
-
-.list-group-item::before {
-    content: "▹";
-    position: absolute;
-    left: -5px;
-}
-
-#content > div {
-    margin-bottom: 6%;
+.text-md {
+    font-size: 1rem;
 }
 
 @media (max-width: 767px) {
-    .about-text {
-        padding: 0;
+    .img-holder > img {
+        max-width: 125px;
     }
 
-    .about-header {
-        margin-bottom: 20px;
-    }
-
-    .about-header::before, .about-header::after {
-        display: none;
-    }
-
-    .img-holder, .highlights > div > h4, .highlights > div > h6 {
-        text-align: center;
-    }
-
-    .highlights > div > h6 { 
+    .img-holder {
         margin-bottom: 10px;
     }
+  }
 
-    .img-holder > img {
-        max-width: 150px;
+  @media (min-width: 992px) {
+    .affix {
+        position: sticky;
+        top: 6%;
     }
   }
